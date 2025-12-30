@@ -19,30 +19,30 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
 vim.keymap.set("n", "<leader>vwm", function()
-    require("vim-with-me").StartVimWithMe()
+	require("vim-with-me").StartVimWithMe()
 end)
 vim.keymap.set("n", "<leader>svwm", function()
-    require("vim-with-me").StopVimWithMe() 
+	require("vim-with-me").StopVimWithMe()
 end)
 
 -- greatest remap ever, pastes last deleted text without overwriting the clipboard
-vim.keymap.set("x", "<leader>p", "\"_dP")
+vim.keymap.set("x", "<leader>p", '"_dP')
 
 -- saves into the systems clipboard (separating it from the nvim clipboard)
-vim.keymap.set("n", "<leader>y", "\"+y")
-vim.keymap.set("v", "<leader>y", "\"+y")
-vim.keymap.set("n", "<leader>y", "\"+Y")
+vim.keymap.set("n", "<leader>y", '"+y')
+vim.keymap.set("v", "<leader>y", '"+y')
+vim.keymap.set("n", "<leader>y", '"+Y')
 
 -- delete without saving it nvim clipboard
-vim.keymap.set("n", "<leader>d", "\"_d")
-vim.keymap.set("v", "<leader>d", "\"_d")
+vim.keymap.set("n", "<leader>d", '"_d')
+vim.keymap.set("v", "<leader>d", '"_d')
 
 -- avoid EX mode
 vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 --formats the code for the language being used
 vim.keymap.set("v", "<leader>f", function()
-    vim.lsp.buf.format() 
+	vim.lsp.buf.format()
 end)
 
 --quick fix navigation
@@ -52,5 +52,5 @@ vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true})
+vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 

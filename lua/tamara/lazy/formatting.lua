@@ -53,19 +53,7 @@ return {
                     timeout_ms = 1000,
                 })
             end, { desc = "Format file or range (in visual mode)" })
-
-            vim.api.nvim_create_autocmd("BufWritePre", {
-                pattern = "*",
-                callback = function(args)
-                    local bufnr = args.buf
-                    local last_line = vim.api.nvim_buf_line_count(bufnr)
-                    local content = vim.api.nvim_buf_get_lines(bufnr, last_line - 1, last_line, false)[1] or ""
-                    if content ~= "" then
-                        vim.api.nvim_buf_set_lines(bufnr, last_line, last_line, false, { "" })
-                    end
-                end,
-            })
-        end,
+        end
     },
 }
 
